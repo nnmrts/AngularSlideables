@@ -1,7 +1,7 @@
 angular.module('angularSlideables', [])
 .directive('slideable', function () {
             return {
-                restrict: 'C',
+                restrict: 'CA',
 
                 // added new attribute to scope:
                 scope: {
@@ -41,8 +41,10 @@ angular.module('angularSlideables', [])
                                 var y = content.clientHeight;
                                 content.style.border = 0;
                                 target.style.height = y + 'px';
+                                element.addClass("expanded");
                             } else {
                                 target.style.height = '0px';
+                                element.removeClass("expanded");
                             }
                         }, true);
                     };
